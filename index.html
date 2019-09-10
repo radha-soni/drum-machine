@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>drum machine</title>
+  </head>
+  <body>
+    <div id="drum-machine">
+      <div id="display">
+        <div id="drum-row-one">
+          <button class="drum-pad">Q</button>
+          <button class="drum-pad">W</button>
+          <button class="drum-pad">E</button>
+        </div>
+        <div id="drum-row-two">
+          <button class="drum-pad">A</button>
+          <button class="drum-pad">S</button>
+          <button class="drum-pad">D</button>
+        </div>
+        <div id="drum-row-three">
+          <button class="drum-pad">Z</button>
+          <button class="drum-pad">X</button>
+          <button class="drum-pad">C</button>
+        </div>
+      </div>
+      <div id="display-controller">
+        <div class="toggle-switch-div">
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider-btn"> </span>
+          </label>
+        </div>
+        <div class="volume-bar-container">
+          <div class="vol-range-value">
+            <input type="text" value="Volume : " />
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="3"
+            class="volume-slider"
+            id="vol-range"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>

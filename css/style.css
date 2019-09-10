@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#drum-machine {
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  background: grey;
+  justify-content: center;
+  align-items: center;
+}
+#display {
+  width: 450px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  background: lightgray;
+  justify-content: center;
+}
+.drum-pad {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 5px;
+  background-color: darkgray;
+}
+
+#display-controller {
+  width: 450px;
+  background: lightgray;
+  border: 2px solid black;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toggle-switch-div {
+  height: 80px;
+}
+.switch {
+  margin-top: 20px;
+  position: relative;
+  width: 175px;
+  height: 45px;
+  display: inline-block;
+}
+.switch input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.slider-btn {
+  position: absolute;
+  cursor: pointer;
+  background-color: black;
+  transition: 0.4s;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 60px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.slider-btn:before {
+  position: absolute;
+  content: "";
+  height: 42px;
+  width: 42px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+input:checked + .slider-btn {
+  background-color: #2196f3;
+}
+input:focus + .slider-btn {
+  box-shadow: 0 0 2px #2196f3;
+}
+input:checked + .slider-btn:before {
+  transform: translateX(129px);
+}
+.vol-range-value {
+  text-align: center;
+  height: 80px;
+}
+.vol-range-value input {
+  width: 180px;
+  height: 40px;
+  background: lightgray;
+  font-size: 22px;
+  font-weight: 600;
+}
+.volume-bar-container {
+  width: 100%;
+  height: 80px;
+}
+.volume-slider {
+  -webkit-appearance: none;
+  width: 75%;
+  height: 10px;
+  background: black;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid blue;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.volume-slider :hover {
+  opacity: 1;
+}
