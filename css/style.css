@@ -2,6 +2,10 @@ body {
   margin: 0;
   padding: 0;
 }
+.drum-container {
+  display: flex;
+  border: 6px solid #d69316;
+}
 #drum-machine {
   text-align: center;
   position: relative;
@@ -13,43 +17,43 @@ body {
   align-items: center;
 }
 #display {
-  width: 450px;
-  height: 300px;
+  width: 300px;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
   background: lightgray;
   justify-content: center;
+  align-items: flex-end;
 }
 .drum-pad {
-  width: 70px;
+  width: 80px;
   height: 70px;
   border: none;
   border-radius: 5px;
   font-weight: 700;
   font-size: 15px;
   margin: 5px;
-  background-color: darkgray;
+  background: dimgrey;
 }
 
 #display-controller {
-  width: 450px;
+  width: 300px;
   background: lightgray;
-  border: 2px solid black;
-  height: 300px;
+  height: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
 }
-.toggle-switch-div {
-  height: 80px;
+
+button {
+  box-shadow: 3px 3px black;
+  outline: 0;
 }
+
 .switch {
-  margin-top: 20px;
   position: relative;
-  width: 175px;
-  height: 45px;
+  width: 100px;
+  height: 37px;
   display: inline-block;
 }
 .switch input {
@@ -60,62 +64,131 @@ body {
 .slider-btn {
   position: absolute;
   cursor: pointer;
-  background-color: black;
+  background: black;
   transition: 0.4s;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  border-radius: 60px;
-  opacity: 0.7;
   transition: opacity 0.2s;
 }
 .slider-btn:before {
   position: absolute;
   content: "";
-  height: 42px;
-  width: 42px;
-  left: 2px;
-  bottom: 2px;
+  height: 30px;
+  width: 30px;
+  left: 4px;
+  bottom: 4px;
   background-color: white;
-  border-radius: 50%;
   transition: 0.4s;
+  background: blue;
 }
-input:checked + .slider-btn {
-  background-color: #2196f3;
-}
+
 input:focus + .slider-btn {
   box-shadow: 0 0 2px #2196f3;
 }
 input:checked + .slider-btn:before {
-  transform: translateX(129px);
+  transform: translateX(63px);
+}
+.switch-2 {
+  position: relative;
+  width: 100px;
+  height: 37px;
+  display: inline-block;
+}
+.switch-2 input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+.slider-btn-2 {
+  position: absolute;
+  cursor: pointer;
+  background: black;
+  transition: 0.4s;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.slider-btn-2:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  left: 4px;
+  bottom: 4px;
+  background-color: blue;
+  transition: 0.4s;
+}
+
+input:focus + .slider-btn-2 {
+  box-shadow: 0 0 2px #2196f3;
+}
+input:checked + .slider-btn-2:before {
+  transform: translateX(63px);
 }
 .vol-range-value {
-  text-align: center;
-  height: 80px;
+  width: 57%;
+  height: 47px;
+  background: dimgrey;
+  margin: 0 auto;
+  font-size: 25px;
+  line-height: 47px;
 }
 .vol-range-value input {
   width: 180px;
   height: 40px;
-  background: lightgray;
+  background: dimgrey;
   font-size: 22px;
   font-weight: 600;
 }
-.volume-bar-container {
-  width: 100%;
-  height: 80px;
-}
+
 .volume-slider {
   -webkit-appearance: none;
-  width: 75%;
-  height: 10px;
-  background: black;
-  border-radius: 7px;
+  border: 1px solid black;
+  width: 70%;
+  height: 3px;
+  background: dimgrey;
+  border-radius: 3px;
   outline: none;
-  border: 1px solid blue;
-  opacity: 0.7;
+  opacity: 1;
   transition: opacity 0.2s;
 }
 .volume-slider :hover {
   opacity: 1;
+}
+#power {
+  display: flex;
+  font-weight: 700;
+  font-size: 25px;
+  justify-content: center;
+  font-family: Russo One;
+}
+#bank {
+  display: flex;
+  font-weight: 700;
+  font-size: 25px;
+  justify-content: center;
+  font-family: Russo One;
+}
+@media only screen and (max-width: 600px) {
+  .drum-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    transform: scale(0.7);
+  }
+  #display {
+    width: 100%;
+    height: 280px;
+    padding: 10px 0;
+    align-items: center;
+  }
+  #display-controller {
+    width: 100%;
+    height: 280px;
+  }
 }
